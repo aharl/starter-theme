@@ -1,15 +1,17 @@
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
+	{% include 'html-header.twig' %}
+
 	{% block head %}
 	{% endblock %}
+
 	</head>
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="header" >
 			{% block header %}
-				<div class="wrapper">
+				<div class="wrapper container">
 					<h1 class="hdr-logo" role="banner">
 						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
 					</h1>
@@ -22,7 +24,7 @@
 
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
+			<div class="wrapper container {{sidebar_class}}">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
@@ -35,7 +37,7 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
+			<footer id="footer" class="container">
 				{% include 'footer.twig' %}
 			</footer>
 			{{ function('wp_footer') }}
