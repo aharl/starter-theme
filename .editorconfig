@@ -4,7 +4,7 @@
 # WordPress Coding Standards
 # https://make.wordpress.org/core/handbook/coding-standards/
 
-root = false
+root = true
 
 [*]
 charset = utf-8
