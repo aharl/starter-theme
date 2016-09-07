@@ -5,19 +5,17 @@
 
 'use strict'
 
-import gulp from 'gulp'
-import mainBowerFiles from 'main-bower-files'
-import notify from 'gulp-notify'
-import sass from 'gulp-sass'
-import postcss from 'gulp-postcss'
-import autoprefixer from 'autoprefixer'
-import cssnano from 'cssnano'
-import sourcemaps from 'gulp-sourcemaps'
-import clean from 'gulp-clean'
-import {create as bsCreate} from 'browser-sync'
-const browserSync = bsCreate()
-import wiredeps from 'wiredep'
-const wiredep = wiredeps.stream
+const gulp = require('gulp')
+const mainBowerFiles = require('main-bower-files')
+const notify = require('gulp-notify')
+const sass = require('gulp-sass')
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
+const sourcemaps = require('gulp-sourcemaps')
+const clean = require('gulp-clean')
+const browserSync = require('browser-sync').create()
+const wiredep = require('wiredep').stream
 
 const devUrl = 'yadmf.dev'
 
