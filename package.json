@@ -18,8 +18,6 @@
   "homepage": "https://github.com/aharl/timber-starter-theme#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.7",
-    "babel-core": "^6.10.4",
-    "babel-preset-es2015": "^6.9.0",
     "browser-sync": "^2.13.0",
     "cssnano": "^3.7.1",
     "gulp": "^3.9.1",

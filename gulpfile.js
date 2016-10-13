@@ -17,7 +17,7 @@ const clean = require('gulp-clean')
 const browserSync = require('browser-sync').create()
 const wiredep = require('wiredep').stream
 
-const devUrl = 'yadmf.dev'
+const devUrl = 'kordata2016.dev'
 
 const dirs = {
   static: 'static'
@@ -42,7 +42,7 @@ gulp.task('styles', () => {
     .pipe(browserSync.stream())
 })
 
-gulp.task('handleBowerFiles', () => {
+gulp.task('bower', () => {
   // move JS files
   gulp.src(mainBowerFiles('**/*.js'))
         .pipe(gulp.dest(`${dirs.static}/js/libs`))
@@ -59,15 +59,15 @@ gulp.task('handleBowerFiles', () => {
       .pipe(notify({ message: 'Bower fonts moved' }))
 })
 
-gulp.task('clean', () => {
-  return gulp.src([`${dirs.static}/scss/libs/**/*.scss`], {read: false})
-    .pipe(clean())
-    .pipe(notify({ message: 'Files cleaned up' }))
-})
+// gulp.task('clean', () => {
+//   return gulp.src([`${dirs.static}/scss/libs/**/*.scss`], {read: false})
+//     .pipe(clean())
+//     .pipe(notify({ message: 'Files cleaned up' }))
+// })
 
-gulp.task('watch', ['styles'], () => {
+gulp.task('serve', ['styles'], () => {
   browserSync.init({
-    files: ['{inc,template-parts}/**/*.php', '*.php', 'templates/*.twig', 'js/**/*.js'],
+    files: ['{inc,template-parts}/**/*.php', '*.php', 'templates/*.twig', 'static/js/**/*.js'],
     proxy: devUrl,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
